@@ -6,8 +6,8 @@ import axios from 'axios';
 import { useAuthStore } from '../../../store/useAuthStore.js';
 import toast from 'react-hot-toast';
 // CURSOR ADDED: Import Lucide icons for better UI
-import { PlusCircle, MinusCircle, Send, ClipboardList, Lightbulb, UserRound, MessageSquare, UserCircle } from 'lucide-react';
-import Link from "next/link";
+import { PlusCircle, MinusCircle, Send, ClipboardList, Lightbulb, UserRound, MessageSquare } from 'lucide-react';
+// import Link from "next/link"; deploy error
 interface Symptom {
   symptom: string;
   severity: 'mild' | 'moderate' | 'severe' | '';
@@ -159,7 +159,7 @@ export default function DashboardContent() {
       } else {
         toast.error(res.data.message || 'Failed to submit symptom report.');
       }
-    } catch (error: any) {
+    } catch (error: undefined | any) {//--------------------------------------------------------------------deploy error
       console.error('Error submitting symptom report:', error);
       toast.error(error.response?.data?.message || 'Error submitting symptom report.');
     } finally {
@@ -195,7 +195,7 @@ export default function DashboardContent() {
       });
 
       if (res.status === 200) {
-        const { conversation, aiResponse } = res.data;
+        const { conversation } = res.data;// removed aiResponse from inside-------------------deploy error
         setConversationId(conversation._id); // Save conversation ID for subsequent messages
         setChatMessages(conversation.messages); // Update with full history from backend
       } else {

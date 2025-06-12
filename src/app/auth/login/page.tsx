@@ -75,7 +75,7 @@
                 </button>
               </div>
               <p className="text-center text-gray-600 text-sm mt-4">
-                Don't have an account?{' '}
+                Don&apos;t have an account?{' '}
                 <a href="/auth/signup" className="text-blue-500 hover:underline">
                   Sign up
                 </a>

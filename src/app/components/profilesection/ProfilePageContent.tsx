@@ -165,7 +165,7 @@ export default function ProfilePageContent() {
   return (
     <div className="container mx-auto p-4 md:p-8 pt-20 bg-gradient-to-br from-gray-50 to-purple-100 min-h-screen text-gray-800">
       <h1 className="text-3xl md:text-4xl font-extrabold text-center text-purple-800 mb-8 drop-shadow">
-        <User className="inline-block mr-2 text-purple-600" size={36} /> {authUser.username}'s Profile
+        <User className="inline-block mr-2 text-purple-600" size={36} /> {authUser.username}&apos;s Profile
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">

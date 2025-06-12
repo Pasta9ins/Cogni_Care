@@ -4,10 +4,9 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link"; // For client-side navigation
-import { cn } from "@/lib/utils"; // cn utility from shadcn
 import { Button } from "@/components/ui/button"; // Shadcn Button
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"; // Shadcn Card components
-import { Activity, Brain, BrainCircuit, HeartPlus, MessageCircle, MessageSquareWarning } from "lucide-react"; // Icons from lucide-react
+import { BrainCircuit, HeartPlus, MessageSquareWarning } from "lucide-react"; // Icons from lucide-react
 
 // (You'll need to remove the props from the previous HeroSection if they are still there
 // since this new version is a standalone component without direct backendMessage/error props)

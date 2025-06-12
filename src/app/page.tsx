@@ -1,10 +1,10 @@
 // C:\Users\Anirudha\Desktop\CogniCare\frontend\src\app\page.tsx
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useAuthStore } from '../store/useAuthStore.js';
 import { useRouter } from 'next/navigation';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import HeroSection from './components/home/HeroSection.tsx'; // Ensure this import path is correct
 import DashboardContent, {} from "./components/dashboard/DashboardContent.tsx"
 
@@ -15,20 +15,14 @@ export default function Home() {
   // If you still want a backend message visible somewhere for logged-out users,
   // we can add a small status component on the main page.
 
-  const { authUser, isLoading, getAuthUser, logout } = useAuthStore();
-  const router = useRouter();
+  const { authUser, isLoading, getAuthUser } = useAuthStore();
+  //const router = useRouter();
 
   useEffect(() => {
     // console.log('page.tsx: useEffect triggered, calling getAuthUser');------------------------
     // getAuthUser(); // Still fetch auth user to check session
   }, [getAuthUser]);
 
-  const handleLogout = async () => {
-    const success = await logout();
-    if (success) {
-      router.push('/auth/login');
-    }
-  };
 
   if (isLoading) {
     return (
