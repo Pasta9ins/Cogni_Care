@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
         return [
             {
                 source: '/api/:path*', // Match any request starting with /api/
-                destination: 'http://localhost:5000/api/:path*', // Proxy it to your backend
+                destination: `${process.env.NEXT_PUBLIC_SERVER_URL}/api/:path*`, // Proxy it to your backend
             },
         ];
     },
