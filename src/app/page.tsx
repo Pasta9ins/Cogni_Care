@@ -3,7 +3,7 @@
 
 import { useEffect } from 'react';
 import { useAuthStore } from '../store/useAuthStore.js';
-import { useRouter } from 'next/navigation';
+//import { useRouter } from 'next/navigation';
 import { Toaster } from 'react-hot-toast';
 import HeroSection from './components/home/HeroSection.tsx'; // Ensure this import path is correct
 import DashboardContent, {} from "./components/dashboard/DashboardContent.tsx"
