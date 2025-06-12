@@ -159,7 +159,7 @@ export default function DashboardContent() {
       } else {
         toast.error(res.data.message || 'Failed to submit symptom report.');
       }
-    } catch (error: unknown ) {//--------------------------------------------------------------------deploy error
+    } catch (error: any ) {//--------------------------------------------------------------------deploy error
       console.error('Error submitting symptom report:', error);
       toast.error( error.response?.data?.message || 'Error submitting symptom report.');
     } finally {
@@ -202,7 +202,7 @@ export default function DashboardContent() {
         toast.error(res.data.message || 'Failed to get AI response.');
         setChatMessages(prevMessages => [...prevMessages, { role: 'ai', content: 'Sorry, Im having trouble responding right now.' }]);
       }
-    } catch (error: unknown) {
+    } catch (error: any) {
       console.error('Error sending chat message:', error);
       toast.error(error.response?.data?.message || 'Error sending chat message.');
       setChatMessages(prevMessages => [...prevMessages, { role: 'ai', content: 'Sorry, an error occurred while connecting to the AI.' }]);

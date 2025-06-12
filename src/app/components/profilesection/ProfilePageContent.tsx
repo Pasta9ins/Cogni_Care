@@ -75,7 +75,7 @@ export default function ProfilePageContent() {
         setConversations(sortedConversations);
 
         setIsLoadingData(false);
-      } catch (err: unknown) {
+      } catch (err: any) {
         console.error('Error fetching profile data:', err);
         setError(err.response?.data?.message || 'Failed to fetch profile data.');
         toast.error('Failed to load profile data.');
