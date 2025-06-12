@@ -159,7 +159,7 @@ export default function DashboardContent() {
       } else {
         toast.error(res.data.message || 'Failed to submit symptom report.');
       }
-    } catch (error: undefined | any) {//--------------------------------------------------------------------deploy error
+    } catch (error: unknown) {//--------------------------------------------------------------------deploy error
       console.error('Error submitting symptom report:', error);
       toast.error(error.response?.data?.message || 'Error submitting symptom report.');
     } finally {
