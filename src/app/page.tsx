@@ -9,7 +9,7 @@ import HeroSection from './components/home/HeroSection.tsx'; // Ensure this impo
 import DashboardContent, {} from "./components/dashboard/DashboardContent.tsx"
 
 export default function Home() {
-  // Removed backendMessage, error, isClient states as they are not used in this component directly anymore
+  // Removed backendMessage, error, isClient states as they are not used in this component directly anymore-
   // Only keep them if you plan to display backend status elsewhere on the page.
   // For simplicity and focus, I'm removing them from here as the HeroSection is now standalone.
   // If you still want a backend message visible somewhere for logged-out users,
