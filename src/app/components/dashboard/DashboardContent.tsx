@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import { useAuthStore } from '../../../store/useAuthStore.js';
 import toast from 'react-hot-toast';
 // CURSOR ADDED: Import Lucide icons for better UI
@@ -146,7 +146,7 @@ export default function DashboardContent() {
     }
 
     try {
-      const res = await axios.post('/api/symptoms', {
+      const res = await api.post('/api/symptoms', {
         reportedSymptoms: filteredSymptoms,
         status: 'pending',
       }, {
@@ -191,7 +191,7 @@ export default function DashboardContent() {
         payload.type = 'general_chat'; // For starting a new conversation
       }
 
-      const res = await axios.post<ConversationResponseData>('/api/conversations', payload, {
+      const res = await api.post<ConversationResponseData>('/api/conversations', payload, {
         withCredentials: true,
       });
 
