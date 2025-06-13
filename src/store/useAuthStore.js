@@ -13,8 +13,8 @@ export const useAuthStore = create((set) => ({
   getAuthUser: async () => {
     set({ isLoading: true, error: null });
     try {
-      const response =await api.get('/api/auth/check');//-----------------------------------------/profile
-      set({ authUser: response.data });//----------------isLoading: false
+      const response = await api.get("/api/auth/check")//-----------------------------------------/profile
+      set({ authUser: response.data, isLoading: false});//----------------
     } catch (err) {
       console.error("Failed to get auth user:", err);
       set({ authUser: null, isLoading: false, error: 'Failed to fetch user profile' });
