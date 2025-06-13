@@ -2,10 +2,11 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import { useAuthStore } from '../../../store/useAuthStore.js';
 import toast from 'react-hot-toast';
 import { User, FileText, MessageSquare, Loader2 } from 'lucide-react'; // Using Lucide icons
+import api from '@/lib/axios.js';
 
 interface Symptom {
   symptom: string;
@@ -62,11 +63,11 @@ export default function ProfilePageContent() {
 
       try {
         // Fetch Symptom Reports
-        const symptomRes = await axios.get<SymptomReport[]>('/api/symptoms', { withCredentials: true });
+        const symptomRes = await api.get<SymptomReport[]>('/api/symptoms', { withCredentials: true });
         setSymptomReports(symptomRes.data);
 
         // Fetch Conversations
-        const conversationRes = await axios.get<Conversation[]>('/api/conversations', { withCredentials: true });
+        const conversationRes = await api.get<Conversation[]>('/api/conversations', { withCredentials: true });
         // Sort messages within each conversation by timestamp
         const sortedConversations = conversationRes.data.map(conv => ({
           ...conv,
