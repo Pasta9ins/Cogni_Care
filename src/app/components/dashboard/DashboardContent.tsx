@@ -7,6 +7,7 @@ import { useAuthStore } from '../../../store/useAuthStore.js';
 import toast from 'react-hot-toast';
 // CURSOR ADDED: Import Lucide icons for better UI
 import { PlusCircle, MinusCircle, Send, ClipboardList, Lightbulb, UserRound, MessageSquare } from 'lucide-react';
+import api from '@/lib/axios.js';//---------------new edit to import because of axios was used and not axios----------------------
 // import Link from "next/link"; deploy error
 interface Symptom {
   symptom: string;
@@ -89,7 +90,7 @@ export default function DashboardContent() {
     const fetchConversationHistory = async () => {
       if (authUser) {
         try {
-          const res = await axios.get<Conversation[]>('/api/conversations', { withCredentials: true });
+          const res = await api.get<Conversation[]>('/api/conversations', { withCredentials: true });
         if (res.data && res.data.length > 0) {
           // Find the most recent 'general_chat' conversation
           const generalChat = res.data
