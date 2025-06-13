@@ -30,9 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased pt-16`}>
         <Navbar />
-        <AuthStatusChecker>
+        {/* <AuthStatusChecker> */}
           {children}
-        </AuthStatusChecker>
+        {/* </AuthStatusChecker> */}
       </body>
     </html>
   );
