@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
-// import AuthStatusChecker from "./components/auth/AuthStatusChecker";
+import AuthStatusChecker from "./components/auth/AuthStatusChecker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased pt-16`}>
         <Navbar />
-        {/* <AuthStatusChecker> */}
+        <AuthStatusChecker>
           {children}
-        {/* </AuthStatusChecker> */}
+        </AuthStatusChecker>
       </body>
     </html>
   );
