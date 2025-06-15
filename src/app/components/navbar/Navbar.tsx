@@ -35,7 +35,7 @@ export default function Navbar() {
         {/* Navigation Links */}
         <div className="flex items-center space-x-4 md:space-x-6 flex-wrap justify-center"> {/* CURSOR ADDED: Flex-wrap for responsiveness */}
           <Link href="/" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition duration-300 ease-in-out text-lg font-medium">
-            <Home size={18} className="mr-2" /> Home
+            <Home size={18} className="mr-2" /> Dashboard
           </Link>
 
           <Link href="/about" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition duration-300 ease-in-out text-lg font-medium">
