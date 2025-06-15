@@ -257,9 +257,9 @@ export default function ProfilePageContent() {
           <p><strong>Role:</strong> <span className="capitalize">{authUser.role}</span></p>
           <p><strong>Member Since:</strong> {new Date(authUser.createdAt).toLocaleDateString()}</p>
           <p><strong>Last Updated:</strong> {new Date(authUser.updatedAt).toLocaleDateString()}</p>
-          <p>
+          {/* <p>
             <strong>Preferences:</strong> Theme: {authUser.preferences.theme}, Notifications: {authUser.preferences.notifications ? 'On' : 'Off'}
-          </p>
+          </p> */}
         </div>
       </div>
 
