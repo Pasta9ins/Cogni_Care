@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from 'react';
 //import axios from 'axios';
 import { useAuthStore } from '../../../store/useAuthStore.js';
 import toast from 'react-hot-toast';
-// CURSOR ADDED: Import Lucide icons for better UI
+//Import Lucide icons for better UI
 import { PlusCircle, MinusCircle, Send, ClipboardList, Lightbulb, UserRound, MessageSquare } from 'lucide-react';
 import api from '@/lib/axios.js';//---------------new edit to import because of axios was used and not axios----------------------
 // import Link from "next/link"; deploy error
@@ -197,8 +197,8 @@ export default function DashboardContent() {
 
       if (res.status === 200) {
         const { conversation } = res.data;// removed aiResponse from inside-------------------deploy error
-        setConversationId(conversation._id); // Save conversation ID for subsequent messages
-        setChatMessages(conversation.messages); // Update with full history from backend
+        setConversationId(conversation._id); 
+        setChatMessages(conversation.messages); 
       } else {
         toast.error(res.data.message || 'Failed to get AI response.');
         setChatMessages(prevMessages => [...prevMessages, { role: 'ai', content: 'Sorry, Im having trouble responding right now.' }]);
@@ -214,7 +214,7 @@ export default function DashboardContent() {
   // END
 
   return (
-    // CURSOR ADDED: Enhanced overall container styling
+    // ADDED: Enhanced overall container styling
     <div className="container mx-auto p-4 md:p-8 pt-20 bg-gradient-to-br from-gray-50 to-indigo-100 min-h-screen text-gray-800">
       <h1 className="text-3xl md:text-4xl font-extrabold text-center text-indigo-800 mb-8 drop-shadow">
         <UserRound className="inline-block mr-2 text-indigo-600" size={36} /> Welcome, {authUser?.username || 'User'}!
