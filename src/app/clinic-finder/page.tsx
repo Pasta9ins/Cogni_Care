@@ -309,7 +309,7 @@ return (
             className="border border-gray-200 rounded-xl p-5 bg-white shadow-md min-h-[180px] flex flex-col justify-between"
           >
             <h2 className="mb-2 text-lg font-semibold flex items-center gap-2">
-              <MapPin size={20} className="text-blue-600" />
+              <MapPin size={20} className="text-blue-600 flex-shrink-0" />
               {place.tags.name || 'Unknown Name'}
             </h2>
             <div className="mb-1 text-gray-700 flex items-center gap-2">
