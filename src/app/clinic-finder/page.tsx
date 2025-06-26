@@ -90,7 +90,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MapPin, Phone, Hospital, User, Search } from 'lucide-react';
+import { MapPin, Phone, Search } from 'lucide-react';
 
 type Place = {
   id: number;
@@ -168,8 +168,8 @@ const ClinicFinderList: React.FC = () => {
       })).sort((a: Place, b: Place) => (a.distance ?? 0) - (b.distance ?? 0));
 
       setPlaces(placesWithDistance);
-    } catch (err) {
-      setError('Failed to fetch data. Please try again.');
+    } catch (error: any) {
+      setError(error.response?.data?.message || 'Failed to fetch data. Please try again.');
     } finally {
       setLoading(false);
     }
