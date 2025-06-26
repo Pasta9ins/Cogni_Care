@@ -1,13 +1,13 @@
 // C:\Users\Anirudha\Desktop\CogniCare\frontend\src\app\components\DashboardContent.tsx
 'use client';
+import ReactMarkdown from 'react-markdown';//-------------------------------------new 26june
 
 import React, { useState, useRef, useEffect } from 'react';
-//import axios from 'axios';
 import { useAuthStore } from '../../../store/useAuthStore.js';
 import toast from 'react-hot-toast';
-//Import Lucide icons for better UI
 import { PlusCircle, MinusCircle, Send, ClipboardList, Lightbulb, UserRound, MessageSquare } from 'lucide-react';
 import api from '@/lib/axios.js';//---------------new edit to import because of axios was used and not axios----------------------
+
 // import Link from "next/link"; deploy error
 interface Symptom {
   symptom: string;
@@ -320,7 +320,7 @@ export default function DashboardContent() {
         </h2>
         <div className="flex flex-col h-[500px] border border-gray-300 rounded-lg overflow-hidden">
           {/* Message Display Area */}
-          <div ref={chatContainerRef} className="flex-1 p-4 overflow-y-auto bg-gray-50">
+          {/* <div ref={chatContainerRef} className="flex-1 p-4 overflow-y-auto bg-gray-50">
             {chatMessages.length === 0 ? (
               <p className="text-gray-500 italic text-center py-10">Start a conversation with CogniCare AI!</p>
             ) : (
@@ -346,7 +346,75 @@ export default function DashboardContent() {
                 <span className="text-gray-500 italic">AI is typing...</span>
               </div>
             )}
-          </div>
+          </div> */}
+
+          {/* new message area */}
+          <div ref={chatContainerRef} className="flex-1 p-4 overflow-y-auto bg-gray-50">
+  {chatMessages.length === 0 ? (
+    <p className="text-gray-500 italic text-center py-10">
+      Start a conversation with CogniCare AI!
+    </p>
+  ) : (
+    chatMessages.map((msg, index) => (
+      <div
+        key={index}
+        className={`mb-4 ${msg.role === 'user' ? 'text-right' : 'text-left'}`}
+      >
+        <div
+          className={`inline-block p-3 rounded-lg max-w-[70%] ${
+            msg.role === 'user'
+              ? 'bg-indigo-500 text-white rounded-br-none'
+              : 'bg-gray-200 text-gray-800 rounded-bl-none'
+          }`}
+        >
+          {msg.role === 'user' ? (
+            msg.content
+          ) : (
+            <div className="prose prose-sm max-w-none">
+            <ReactMarkdown
+              components={{
+                h1: ({node, ...props}) => (
+                  <h1 className="text-lg font-bold mt-2 mb-1" {...props} />
+                ),
+                h2: ({node, ...props}) => (
+                  <h2 className="text-base font-semibold mt-2 mb-1" {...props} />
+                ),
+                ul: ({node, ...props}) => (
+                  <ul className="list-disc ml-6" {...props} />
+                ),
+                li: ({node, ...props}) => (
+                  <li className="mb-1" {...props} />
+                ),
+                strong: ({node, ...props}) => (
+                  <strong className="font-bold" {...props} />
+                ),
+                p: ({node, ...props}) => (
+                  <p className="mb-2" {...props} />
+                ),
+              }}
+            >
+              {msg.content}
+            </ReactMarkdown>
+            </div>
+          )}
+        </div>
+        <div className="text-xs text-gray-500 mt-1">
+          {msg.timestamp
+            ? new Date(msg.timestamp).toLocaleTimeString()
+            : 'Just now'}
+        </div>
+      </div>
+    ))
+  )}
+  {isChatting && (
+    <div className="text-center mt-2">
+      <span className="text-gray-500 italic">AI is typing...</span>
+    </div>
+  )}
+</div>
+
+
+
 
           {/* Message Input Area */}
           <form onSubmit={handleSendMessage} className="flex p-4 border-t border-gray-300 bg-white">
