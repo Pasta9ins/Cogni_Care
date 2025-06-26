@@ -373,22 +373,22 @@ export default function DashboardContent() {
             <div className="prose prose-sm max-w-none">
             <ReactMarkdown
               components={{
-                h1: ({node, ...props}) => (
+                h1: ({...props}) => (
                   <h1 className="text-lg font-bold mt-2 mb-1" {...props} />
                 ),
-                h2: ({node, ...props}) => (
+                h2: ({...props}) => (
                   <h2 className="text-base font-semibold mt-2 mb-1" {...props} />
                 ),
-                ul: ({node, ...props}) => (
+                ul: ({...props}) => (
                   <ul className="list-disc ml-6" {...props} />
                 ),
-                li: ({node, ...props}) => (
+                li: ({...props}) => (
                   <li className="mb-1" {...props} />
                 ),
-                strong: ({node, ...props}) => (
+                strong: ({...props}) => (
                   <strong className="font-bold" {...props} />
                 ),
-                p: ({node, ...props}) => (
+                p: ({...props}) => (
                   <p className="mb-2" {...props} />
                 ),
               }}
