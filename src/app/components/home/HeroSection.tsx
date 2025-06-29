@@ -25,7 +25,7 @@ const steps = [
 
 const HeroSection: React.FC = () => (
   <>
-    <section className="w-full min-h-[92dvh] bg-gradient-to-r from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12 md:py-24 lg:py-32 pt-10"> {/* Added py for padding */}
+    <section className="w-full min-h-[92dvh] bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-4 md:py-24 lg:py-32 "> {/* Added py for padding */}
       <div className="container px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
           <div className="flex flex-col items-center md:items-start space-y-4 text-center md:text-left pt-10 md:pt-0 md:w-1/2">
@@ -45,8 +45,14 @@ const HeroSection: React.FC = () => (
             </div>
           </div>
           <div className="md:w-1/2">
-            <Image src="/hero_bgr.png" alt="CogniCare Hero Image" fetchPriority="high" width={400} height={400} className="w-full h-auto"
-              loading="eager"
+            <Image 
+            src="/hero_bgr.png" 
+            alt="CogniCare Hero Image" 
+            fetchPriority="high" 
+            width={400} 
+            height={400} 
+            className="w-4/5 h-auto"
+            loading="eager"
             />
           </div>
         </div>

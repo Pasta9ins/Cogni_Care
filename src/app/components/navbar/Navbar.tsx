@@ -51,9 +51,7 @@ export default function Navbar() {
 
     {/* Navigation Links (desktop) */}
     <div className="hidden md:flex items-center space-x-4 md:space-x-6 flex-wrap justify-center">
-      <Link href="/clinic-finder" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium">
-        <Search size={18} className="mr-2" /> Find Doctor
-      </Link>
+      
       <Link href="/" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium">
         <Home size={18} className="mr-2" /> Dashboard
       </Link>
@@ -62,6 +60,9 @@ export default function Navbar() {
       </Link>
       {authUser ? (
         <>
+          <Link href="/clinic-finder" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium">
+            <Search size={18} className="mr-2" /> Find Doctor
+          </Link>
           <Link href="/profile" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium">
             <UserCircle size={18} className="mr-2" /> Profile
           </Link>
@@ -85,9 +86,7 @@ export default function Navbar() {
   {/* Mobile Menu */}
   {menuOpen && (
     <div className="md:hidden mt-3 flex flex-col items-center space-y-2 bg-gradient-to-r from-indigo-400 to-purple-400 p-4 rounded-b-xl shadow-lg">
-      <Link href="/clinic-finder" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium w-full justify-center" onClick={() => setMenuOpen(false)}>
-        <Search size={18} className="mr-2" /> Find Doctor
-      </Link>
+      
       <Link href="/" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium w-full justify-center" onClick={() => setMenuOpen(false)}>
         <Home size={18} className="mr-2" /> Dashboard
       </Link>
@@ -96,6 +95,9 @@ export default function Navbar() {
       </Link>
       {authUser ? (
         <>
+          <Link href="/clinic-finder" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium w-full justify-center" onClick={() => setMenuOpen(false)}>
+            <Search size={18} className="mr-2" /> Find Doctor
+          </Link>
           <Link href="/profile" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium w-full justify-center" onClick={() => setMenuOpen(false)}>
             <UserCircle size={18} className="mr-2" /> Profile
           </Link>
