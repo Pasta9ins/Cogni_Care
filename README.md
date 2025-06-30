@@ -20,6 +20,10 @@ This platform empowers users to check symptoms, chat with an AI health assistant
 🔗 [Live Website](https://cogni-care-front.vercel.app)
 
 ---
+## 📸 Landing Page 
+![CogniCare Demo-Landing Page](assets/HomePage.png)  
+
+---
 
 ## ✨ Features
 
@@ -83,10 +87,6 @@ This platform empowers users to check symptoms, chat with an AI health assistant
 
 ---
 
-## 📸 Landing Page 
-![CogniCare Demo-Landing Page](assets/HomePage.png)  
-
----
 
 ## 💡 Future Enhancements (Planned)
 - User health history tracking
