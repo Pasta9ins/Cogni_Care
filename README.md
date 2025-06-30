@@ -83,13 +83,8 @@ This platform empowers users to check symptoms, chat with an AI health assistant
 
 ---
 
-## 📸 Demo Screenshots 
-![CogniCare Demo-Landing Page](/frontend/assets/HomePage.png)
-- 🔍 Symptom Checker Interface  
-- 💬 AI Chat with RAG Assistant  
-- 🗺️ Find Doctor Map Interface  
-- 🍽️ Diet Plan UI  
-- 🏋️ Exercise Routine Screen  
+## 📸 Landing Page 
+![CogniCare Demo-Landing Page](assets/HomePage.png)  
 
 ---
 
