@@ -60,6 +60,10 @@ export default function Navbar() {
       </Link>
       {authUser ? (
         <>
+          <Link href="/my-plan" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium">
+            <Search size={18} className="mr-2" /> My Plan
+          </Link>
+
           <Link href="/clinic-finder" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium">
             <Search size={18} className="mr-2" /> Find Doctor
           </Link>
@@ -95,6 +99,9 @@ export default function Navbar() {
       </Link>
       {authUser ? (
         <>
+          <Link href="/my-plan" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium">
+            <Search size={18} className="mr-2" /> My Plan
+          </Link>
           <Link href="/clinic-finder" className="flex items-center px-3 py-2 rounded-md hover:bg-indigo-600 transition text-lg font-medium w-full justify-center" onClick={() => setMenuOpen(false)}>
             <Search size={18} className="mr-2" /> Find Doctor
           </Link>

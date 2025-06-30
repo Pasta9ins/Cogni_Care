@@ -9,6 +9,7 @@
     export default function SignupPage() {
       const [username, setUsername] = useState('');
       const [email, setEmail] = useState('');
+      const [age, setAge] = useState('');//-----------------------new one
       const [password, setPassword] = useState('');
       const [role, setRole] = useState('user'); // Default role
       const router = useRouter();
@@ -22,7 +23,7 @@
 
       const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!username || !email || !password) {
+        if (!username || !email || !password || !age) {
           toast.error('Please fill in all fields.');
           return;
         }
@@ -31,7 +32,7 @@
           return;
         }
 
-        const success = await signup({ username, email, password, role });
+        const success = await signup({ username, email, password, role, age: Number(age) });
         if (success) {
           // Redirection is handled by useEffect based on authUser state
         }
@@ -85,6 +86,24 @@
                   required
                 />
               </div>
+              {/*new age field */}
+              <div className="mb-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="age">
+                  Age
+                </label>
+                <input
+                type="number"
+                id="age"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your age"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                required
+                min={1}
+                max={120}
+                />
+              </div>
+
               <div className="mb-6">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="role">
                   Role
