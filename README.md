@@ -10,7 +10,7 @@ This platform empowers users to check symptoms, chat with an AI health assistant
 
 - 🩺 **AI Symptom Checker:** Submit symptoms and get AI-based health suggestions backed by a knowledge base.
 - 💬 **AI Chat Assistant:** Chat with an AI assistant for detailed health advice and remedies.
-- 🏥 **Find a Doctor/Clinic:** Search for nearby clinics and doctors, view on map, and call directly.
+- 🏥 **Find a Doctor/Clinic:** Search for Top 20 nearby clinics and doctors, view on map, and call directly.
 - 🥗 **Manage Diet Plans:** Receive tailored meal plans.
 - 🏋️ **Exercise Guidance:** Exercise routines with sets, reps, and durations.
 - 🧘 **Meditation Guides:** Access video and audio-based guided meditation sessions.
@@ -33,7 +33,7 @@ This platform empowers users to check symptoms, chat with an AI health assistant
 - Knowledge base curated specifically for Indian users
 
 ### 📍 **Doctor & Clinic Finder**
-- Enter location to find nearby clinics and doctors
+- Enter location to find top 20 nearby clinics and doctors
 - View locations using interactive maps powered by **OpenStreetMap**
 - Direct call functionality for listed clinics
 
