@@ -10,13 +10,20 @@ export default function AboutPage() {
       </h1>
       <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 max-w-3xl mx-auto">
         <p className="text-lg leading-relaxed mb-4">
-          CogniCare is your personal AI-powered wellness companion, designed to help you understand and manage your health effectively. We leverage cutting-edge artificial intelligence to provide insights into your symptom reports and engage in supportive conversations about your general well-being.
+          CogniCare is your AI-powered wellness companion, designed to help you manage and improve your health with confidence. Powered by advanced AI and a rich knowledge base, CogniCare provides personalized insights, symptom analysis, and supportive wellness conversations.
         </p>
         <p className="text-lg leading-relaxed mb-4">
-          Our goal is to empower you with information and guidance, helping you make informed decisions about your health journey. From initial symptom assessment to ongoing wellness discussions, CogniCare is here to support you every step of the way.
+          Our goal is to empower you with information and guidance, helping you make informed decisions about your health journey. Beyond symptom assessments, CogniCare offers a comprehensive Plans section where you can access tailored diet, exercise, and meditation plans to support your daily well-being. Our new Find Doctor feature helps you locate nearby clinics and healthcare professionals quickly, making access to care more seamless than ever.
         </p>
         <p className="text-lg leading-relaxed">
-          Please remember that CogniCare is an AI assistant and not a substitute for professional medical advice. Always consult with a qualified healthcare provider for diagnosis and treatment.
+          Please note that CogniCare is an AI assistant and not a substitute for professional medical advice. Always consult a qualified healthcare provider for diagnosis and treatment.
+        </p>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <p className="text-lg leading-relaxed">
+        Have questions, feedback, or suggestions? Feel free to reach out at anirudhachaudhary33@gmail.com
         </p>
       </div>
     </div>
