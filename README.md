@@ -11,13 +11,13 @@ This platform empowers users to check symptoms, chat with an AI health assistant
 - 🩺 **AI Symptom Checker:** Submit symptoms and get AI-based health suggestions backed by a knowledge base.
 - 💬 **AI Chat Assistant:** Chat with an AI assistant for detailed health advice and remedies.
 - 🏥 **Find a Doctor/Clinic:** Search for nearby clinics and doctors, view on map, and call directly.
-- 🥗 **Personalized Diet Plans:** Receive tailored meal plans.
-- 🏋️ **Exercise Guidance:** Get exercise routines with sets, reps, and durations.
-- 🧘 **Meditation Guides:** Access text and audio-based guided meditation sessions.
+- 🥗 **Manage Diet Plans:** Receive tailored meal plans.
+- 🏋️ **Exercise Guidance:** Exercise routines with sets, reps, and durations.
+- 🧘 **Meditation Guides:** Access video and audio-based guided meditation sessions.
 
 ---
 
-🔗 _(Add Live Demo Link Here If Deployed)_
+🔗 [Live Website](https://cogni-care-front.vercel.app)
 
 ---
 
@@ -25,19 +25,18 @@ This platform empowers users to check symptoms, chat with an AI health assistant
 
 ### 🤖 **AI-Powered Health Assistance (Gemini + RAG)**
 - AI-driven symptom analysis
-- Detailed responses powered by **Gemini AI** and a **RAG pipeline**
+- Detailed responses powered by **Gemini AI** and a **RAG Knowledgebase pipeline**
 - Knowledge base curated specifically for Indian users
-- Context-aware chat assistant for deeper discussions and remedies
 
 ### 📍 **Doctor & Clinic Finder**
-- Enter location (string-based) to find nearby clinics and doctors
-- View locations using interactive maps powered by **OpenStreetMap + React-Leaflet**
+- Enter location to find nearby clinics and doctors
+- View locations using interactive maps powered by **OpenStreetMap**
 - Direct call functionality for listed clinics
 
 ### 🩺 **Comprehensive Wellness Support**
 - Tailored diet plans with meal breakdowns
 - Exercise routines with customizable sets, reps, and durations
-- Meditation guides with both text instructions and audio support
+- Meditation guides with both text instructions and audio/video support
 
 ### 🔐 **Secure Authentication & User Management**
 - JWT-based secure login
@@ -49,14 +48,14 @@ This platform empowers users to check symptoms, chat with an AI health assistant
 
 | Category         | Technology                                       |
 | ---------------- | ------------------------------------------------ |
-| **Frontend**     | Next.js, TypeScript, Tailwind CSS, React-Leaflet |
+| **Frontend**     | Next.js, TypeScript, Tailwind CSS                |
 | **Backend**      | Node.js, Express.js, MongoDB                     |
-| **AI Integration** | Google Gemini API + RAG Pipeline                |
-| **State Mgmt**   | Zustand                                           |
-| **Auth**         | JWT Authentication                                |
-| **Maps**         | OpenStreetMap API, React-Leaflet                  |
-| **Utilities**    | Axios, String Similarity (Fuzzy Matching)         |
-| **Deployment**   | _(e.g., Vercel, Render — add here if deployed)_   |
+| **AI Integration** | Google Gemini API + RAG Pipeline               |
+| **State Mgmt**   | Zustand                                          |
+| **Auth**         | JWT Authentication                               |
+| **Maps**         | OpenStreetMap API, React-Leaflet                 |
+| **Utilities**    | Axios, String Similarity (Fuzzy Matching)        |
+| **Deployment**   | Vercel                                           |
 
 ---
 
@@ -65,7 +64,7 @@ This platform empowers users to check symptoms, chat with an AI health assistant
 ### 🩺 Symptom Checker Flow
 1. User submits symptoms through the form
 2. The system sends the input to Gemini AI
-3. RAG pipeline retrieves context from the Indian medical knowledge base
+3. RAG pipeline retrieves context from the medical knowledge base
 4. AI responds with probable conditions, suggestions, and next steps
 
 ### 💬 AI Chat Flow
@@ -75,7 +74,31 @@ This platform empowers users to check symptoms, chat with an AI health assistant
 
 ### 🗺️ Find Doctor Flow
 1. User enters a location (text input like "Connaught Place, Delhi")
-2. The system searches and matches locations using **fuzzy matching** and OpenStreetMap API
+2. The system searches and matches locations using **OpenStreetMap API**
 3. Results are shown on an interactive map with call links to clinics
 
 ### 🏋️ Diet, Exercise, Meditation
+- Users can access or generate health plans personalized to their needs
+- Plans include structured data: meals, exercises with sets/reps, and meditation guides
+
+---
+
+## 📸 Demo Screenshots 
+![CogniCare Demo-Landing Page](/frontend/assets/HomePage.png)
+- 🔍 Symptom Checker Interface  
+- 💬 AI Chat with RAG Assistant  
+- 🗺️ Find Doctor Map Interface  
+- 🍽️ Diet Plan UI  
+- 🏋️ Exercise Routine Screen  
+
+---
+
+## 💡 Future Enhancements (Planned)
+- User health history tracking
+- More advanced doctor filtering (by specialization, rating)
+- AI-based preventive care suggestions
+- Push notifications for reminders (exercise, medication, meditation)
+
+---
+
+## 🙌 Made with ❤️ by **Anirudha Chaudhary**
