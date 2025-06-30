@@ -5,6 +5,7 @@ import { useAuthStore } from '../../store/useAuthStore.js';
 import api from '@/lib/axios.js';
 import toast, { Toaster } from 'react-hot-toast';
 import PlanContentForm from './PlanForm';
+import { Loader2 } from 'lucide-react';
 
 // --- TypeScript Interfaces ---
 interface PlanDay {
@@ -180,7 +181,7 @@ export default function MyPlanPage() {
   if (loading) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center p-24 bg-gray-50">
-        <span className="animate-spin text-indigo-600 mb-4 text-5xl">🌀</span>
+        <Loader2 className="animate-spin text-indigo-600 mb-4" size={48} />
         <h1 className="text-4xl font-bold mb-8 text-gray-800">Loading Plans...</h1>
         <p className="text-xl text-gray-600">Fetching your personalized plans.</p>
       </div>
