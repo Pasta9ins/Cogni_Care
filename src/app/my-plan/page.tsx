@@ -64,8 +64,8 @@ export default function MyPlanPage() {
     try {
       const res = await api.get('/api/plans/my');
       setPlans(res.data.plans || []);
-    } catch (err) {
-      toast.error('Failed to fetch plans');
+    } catch (err : any) {
+      toast.error(err.response?.data?.message || 'Failed to fetch plans');
     }
     setLoading(false);
   };
