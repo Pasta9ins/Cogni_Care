@@ -92,8 +92,9 @@ export default function MyPlanPage() {
           title: `${PLAN_TYPES.find(pt => pt.type === type)?.label} for ${authUser?.username || 'You'}`,
           // content: undefined // omit to trigger auto-generation
         });
-      } catch (err) {
+      } catch (err : any) {
         // Optionally handle error (e.g., toast.error)
+        console.log(err.response?.data?.message || 'Failed to fetch plans');
       }
     }
 
