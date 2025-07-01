@@ -96,4 +96,10 @@ This platform empowers users to check symptoms, chat with an AI health assistant
 
 ---
 
+## ©️ License & Credits
+
+- © 2025 **Anirudha Chaudhary**. All rights reserved.
+
+---
+
 ## 🙌 Made with ❤️ by **Anirudha Chaudhary**
