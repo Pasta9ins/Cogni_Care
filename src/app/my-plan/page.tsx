@@ -60,16 +60,58 @@ export default function MyPlanPage() {
   }, [authUser]);
 
   // Fetch all active plans for the user
+  // const fetchPlans = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const res = await api.get('/api/plans/my');
+  //     setPlans(res.data.plans || []);
+  //   } catch (err : any) {
+  //     toast.error(err.response?.data?.message || 'Failed to fetch plans');
+  //   }
+  //   setLoading(false);
+  // };
+
+  //new fetch plans with auto generation on first visit----------------------------------
   const fetchPlans = async () => {
-    setLoading(true);
-    try {
-      const res = await api.get('/api/plans/my');
-      setPlans(res.data.plans || []);
-    } catch (err : any) {
-      toast.error(err.response?.data?.message || 'Failed to fetch plans');
+  setLoading(true);
+  try {
+    // 1. Fetch existing plans
+    const res = await api.get('/api/plans/my');
+    let fetchedPlans = res.data.plans || [];
+
+    // 2. For each plan type, check if it exists
+    const missingTypes = PLAN_TYPES
+      .map(pt => pt.type)
+      .filter(type => !fetchedPlans.some((plan: Plan) => plan.type === type));
+
+    // 3. For each missing type, create a personalized plan
+    for (const type of missingTypes) {
+      try {
+        await api.post('/api/plans', {
+          type,
+          title: `${PLAN_TYPES.find(pt => pt.type === type)?.label} for ${authUser?.username || 'You'}`,
+          // content: undefined // omit to trigger auto-generation
+        });
+      } catch (err) {
+        // Optionally handle error (e.g., toast.error)
+      }
     }
-    setLoading(false);
-  };
+
+    // 4. If any plans were created, re-fetch plans
+    if (missingTypes.length > 0) {
+      const res2 = await api.get('/api/plans/my');
+      fetchedPlans = res2.data.plans || [];
+    }
+
+    setPlans(fetchedPlans);
+  } catch (err: any) {
+    toast.error(err.response?.data?.message || 'Failed to fetch plans');
+  }
+  setLoading(false);
+};
+
+
+
 
   // Start editing a plan (open modal)
   const startEdit = (plan: Plan) => {
